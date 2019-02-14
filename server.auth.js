@@ -4,12 +4,9 @@ const jwt = require('jsonwebtoken');
 const expressjwt = require('express-jwt');
 const cors = require('cors');
 
-const PORT = process.env.PORT || 8888;
-const TOKEN_SECRET = 'secret_token_key'; //just for PoC, otherwise must be in .env or private variable!
+const { TOKEN_SECRET } = require('./config');
 
-const jwtCheck = expressjwt({
-  secret: TOKEN_SECRET,
-});
+const PORT = process.env.PORT || 3000;
 
 const users = [
   { id: 1, username: 'admin', password: 'admin' },
@@ -27,10 +24,6 @@ app.get('/status', (req, res) => {
   const localTime = new Date().toLocaleTimeString();
 
   res.status(200).send(`Server time : ${localTime}`);
-});
-
-app.get('/secure', jwtCheck, (req, res) => {
-  res.status(200).send('Secure resource, you should be logged in to see this');
 });
 
 // post: login
