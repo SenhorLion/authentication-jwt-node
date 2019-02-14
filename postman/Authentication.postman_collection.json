@@ -42,7 +42,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"username\": \"admin\"\n}"
+					"raw": "{\n\"username\": \"guest\",\n\"password\": \"guest\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8888/login",
