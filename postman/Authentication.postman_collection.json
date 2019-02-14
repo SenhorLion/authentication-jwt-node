@@ -57,6 +57,49 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "secure route",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiZ3Vlc3QiLCJpYXQiOjE1NTAxNTY4ODgsImV4cCI6MTU1MDE2NzY4OH0.DAgzSt-ksceJH7yliI3VFFgoyKSCF0LlJMCplFkmKjg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"username\": \"guest\",\n\"password\": \"guest\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/secure",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"secure"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
